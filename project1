@@ -1,0 +1,21 @@
+# LangChain and langchain-google-genai SDK
+!pip install -Uq langchain langchain-google-genai
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 42.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.3/41.3 kB 3.0 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 411.6/411.6 kB 30.3 MB/s eta 0:00:00
+import langchain_google_genai as genai
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+from google.colab import userdata
+GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY_1')
+
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.0-flash-exp",
+    api_key=GOOGLE_API_KEY
+
+    response = llm.invoke("Who is the founder of Pakistan")
+print(response.content)
+The founder of Pakistan is **Muhammad Ali Jinnah**.
+
+
+   
